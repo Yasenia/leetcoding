@@ -1,5 +1,7 @@
 package leetcoding.algorithms.problem0021
 
+import leetcoding.core.datastructure.ListNode
+
 class Solution2 : Solution {
 
     override fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? = when {

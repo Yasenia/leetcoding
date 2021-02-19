@@ -1,5 +1,7 @@
 package leetcoding.algorithms.problem0019
 
+import leetcoding.core.datastructure.ListNode
+
 class Solution1 : Solution {
 
     override fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {

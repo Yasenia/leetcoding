@@ -2,13 +2,10 @@ package leetcoding.algorithms.problem0019
 
 import leetcoding.core.ISolution
 import leetcoding.core.ISolutionTest
+import leetcoding.core.datastructure.ListNode
+import leetcoding.core.datastructure.linkedListOf
 
 internal class SolutionTest : ISolutionTest<Pair<ListNode?, Int>, ListNode?>() {
-
-    private fun linkedListOf(vararg values: Int): ListNode? {
-        if (values.isEmpty()) return null
-        return ListNode(values.first(), linkedListOf(*values.drop(1).toIntArray()))
-    }
 
     override val solutions: List<ISolution<Pair<ListNode?, Int>, ListNode?>> = listOf(Solution1())
 

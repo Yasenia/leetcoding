@@ -1,6 +1,7 @@
 package leetcoding.algorithms.problem0021
 
 import leetcoding.core.ISolution
+import leetcoding.core.datastructure.ListNode
 
 interface Solution : ISolution<Pair<ListNode?, ListNode?>, ListNode?> {
 

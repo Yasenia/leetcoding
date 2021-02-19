@@ -1,6 +1,7 @@
 package leetcoding.algorithms.problem0019
 
 import leetcoding.core.ISolution
+import leetcoding.core.datastructure.ListNode
 
 /**
  * [Problem 19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)

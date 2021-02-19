@@ -1,5 +1,7 @@
 package leetcoding.algorithms.problem0002
 
+import leetcoding.core.datastructure.ListNode
+
 class Solution1 : Solution {
 
     override fun addTwoNumbers(number1: ListNode?, number2: ListNode?): ListNode? = addTwoNumbers(number1, number2, 0)

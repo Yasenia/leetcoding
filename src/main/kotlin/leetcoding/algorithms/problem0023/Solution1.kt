@@ -1,5 +1,7 @@
 package leetcoding.algorithms.problem0023
 
+import leetcoding.core.datastructure.ListNode
+
 class Solution1 : Solution {
 
     override fun mergeKLists(lists: Array<ListNode?>): ListNode? {

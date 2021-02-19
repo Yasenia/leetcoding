@@ -1,6 +1,7 @@
 package leetcoding.algorithms.problem0023
 
 import leetcoding.core.ISolution
+import leetcoding.core.datastructure.ListNode
 
 /**
  * [Problem 23](https://leetcode.com/problems/merge-k-sorted-lists/)

@@ -1,6 +1,7 @@
 package leetcoding.algorithms.problem0002
 
 import leetcoding.core.ISolution
+import leetcoding.core.datastructure.ListNode
 
 /**
  * [Problem 2](https://leetcode.com/problems/add-two-numbers/)
