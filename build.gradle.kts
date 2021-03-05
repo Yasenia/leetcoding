@@ -12,7 +12,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
 
-    testImplementation(platform("org.junit:junit-bom:5.7.0"))
+    testImplementation(platform("org.junit:junit-bom:5.8.0-M1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.hamcrest:hamcrest-all:1.3")
 }
