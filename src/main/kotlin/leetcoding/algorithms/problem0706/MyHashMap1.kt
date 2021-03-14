@@ -1,7 +1,7 @@
-package leetcoding.algorithms.problem0705
+package leetcoding.algorithms.problem0706
 
 @Suppress("DuplicatedCode") // Some codes are looks similar to the solution of problem 705
-class MyHashSet1 : MyHashSet {
+class MyHashMap1 : MyHashMap {
 
     companion object {
         private const val LOAD_FACTOR = 0.75
@@ -13,34 +13,37 @@ class MyHashSet1 : MyHashSet {
     private val capacity get() = 1 shl highestBit
     private var table: Array<Node?> = Array(capacity) { null }
 
-    override fun add(key: Int) {
+    override fun put(key: Int, value: Int) {
         val hash = hash(key)
-        var node: Node? = table[hash]
+        var node = table[hash]
         while (node != null) {
-            if (node.value == key) return
+            if (node.key == key) {
+                node.value = value
+                return
+            }
             node = node.next
         }
-        table[hash] = Node(key, table[hash])
+        table[hash] = Node(key, value, table[hash])
         size++
         expandIfNeed()
     }
 
-    override fun contains(key: Int): Boolean {
+    override fun get(key: Int): Int {
         val hash = hash(key)
         var node = table[hash]
         while (node != null) {
-            if (node.value == key) return true
+            if (node.key == key) return node.value
             node = node.next
         }
-        return false
+        return -1
     }
 
     override fun remove(key: Int) {
         val hash = hash(key)
-        val dummy = Node(0, table[hash])
+        val dummy = Node(0, 0, table[hash])
         var node: Node? = dummy
         while (node != null) {
-            if (node.next?.value == key) {
+            if (node.next?.key == key) {
                 node.next = node.next?.next
                 table[hash] = dummy.next
                 size--
@@ -58,8 +61,8 @@ class MyHashSet1 : MyHashSet {
         for (i in table.indices) {
             var node = table[i]
             while (node != null) {
-                if (1 shl highestBit and node.value.hashCode() == 0) newTable[i] = Node(node.value, newTable[i])
-                else newTable[i + capacity] = Node(node.value, newTable[i + capacity])
+                if (1 shl highestBit and node.key.hashCode() == 0) newTable[i] = Node(node.key, node.value, newTable[i])
+                else newTable[i + capacity] = Node(node.key, node.value, newTable[i + capacity])
                 node = node.next
             }
         }
@@ -67,5 +70,5 @@ class MyHashSet1 : MyHashSet {
         table = newTable
     }
 
-    private class Node(val value: Int, var next: Node? = null)
+    private class Node(val key: Int, var value: Int, var next: Node? = null)
 }
