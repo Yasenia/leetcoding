@@ -1,5 +1,7 @@
 package leetcoding.algorithms.problem1155
 
+import leetcoding.core.math.modSum
+
 class Solution1 : Solution {
 
     override fun numRollsToTarget(d: Int, f: Int, target: Int): Int =
@@ -11,7 +13,7 @@ class Solution1 : Solution {
             d == 0 -> 1
             else -> (1..f.coerceAtMost(target))
                 .map { numRollsToTarget(d - 1, f, target - it, dp) }
-                .fold(0) { acc, i -> (acc + i) % 1000000007 }
+                .modSum()
         }
         return dp[d][target]
     }
