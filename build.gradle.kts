@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.31"
+    kotlin("jvm") version "1.5.0-M2"
     id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
 }
 
@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation(kotlin("reflect"))
 
     testImplementation(platform("org.junit:junit-bom:5.8.0-M1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -22,7 +23,6 @@ dependencies {
 tasks {
     withType<KotlinCompile> {
         kotlinOptions {
-            useIR = true
             jvmTarget = "1.8"
         }
     }
