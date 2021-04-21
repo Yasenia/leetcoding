@@ -7,7 +7,7 @@ import leetcoding.core.ISolution
  * */
 interface Solution : ISolution<Pair<IntArray, IntArray>, Int> {
 
-    override fun solve(input: Pair<IntArray, IntArray>): Int = findContentChildren(input.first.clone(), input.second.clone())
+    override fun solve(input: Pair<IntArray, IntArray>): Int = findContentChildren(input.first.copyOf(), input.second.copyOf())
 
     fun findContentChildren(g: IntArray, s: IntArray): Int
 }

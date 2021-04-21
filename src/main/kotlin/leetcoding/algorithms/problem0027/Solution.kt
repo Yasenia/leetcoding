@@ -7,7 +7,7 @@ import leetcoding.core.ISolution
  * */
 interface Solution : ISolution<Pair<IntArray, Int>, Int> {
 
-    override fun solve(input: Pair<IntArray, Int>): Int = removeElement(input.first.clone(), input.second)
+    override fun solve(input: Pair<IntArray, Int>): Int = removeElement(input.first.copyOf(), input.second)
 
     fun removeElement(nums: IntArray, value: Int): Int
 }

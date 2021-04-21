@@ -7,18 +7,18 @@ class Solution1 : Solution {
         val counters = IntArray(128)
         var count = 0
         for (c in t) {
-            flag[c.toInt()] = true
-            if (counters[c.toInt()]-- == 0) count--
+            flag[c.code] = true
+            if (counters[c.code]-- == 0) count--
         }
         var minLeft = -1
         var minRight = s.length
         var left = 0
         for (right in s.indices) {
-            if (!flag[s[right].toInt()]) continue
-            if (++counters[s[right].toInt()] == 0) count++
+            if (!flag[s[right].code]) continue
+            if (++counters[s[right].code] == 0) count++
             while (left <= right) {
-                if (flag[s[left].toInt()] && counters[s[left].toInt()] <= 0) break
-                if (flag[s[left].toInt()]) counters[s[left].toInt()]--
+                if (flag[s[left].code] && counters[s[left].code] <= 0) break
+                if (flag[s[left].code]) counters[s[left].code]--
                 left++
             }
             if (count == 0 && right - left < minRight - minLeft) {

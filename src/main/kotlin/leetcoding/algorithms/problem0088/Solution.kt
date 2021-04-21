@@ -9,8 +9,8 @@ import leetcoding.core.lib.Tuple4
 interface Solution : ISolution<Tuple4<IntArray, Int, IntArray, Int>, IntArray> {
 
     override fun solve(input: Tuple4<IntArray, Int, IntArray, Int>): IntArray {
-        val nums1 = input.first.clone()
-        val nums2 = input.third.clone()
+        val nums1 = input.first.copyOf()
+        val nums2 = input.third.copyOf()
         merge(nums1, input.second, nums2, input.fourth)
         return nums1
     }
