@@ -9,5 +9,5 @@ interface Solution : ISolution<Pair<IntArray, Int>, Int> {
 
     override fun solve(input: Pair<IntArray, Int>): Int = shipWithinDays(input.first, input.second)
 
-    fun shipWithinDays(weights: IntArray, D: Int): Int
+    fun shipWithinDays(weights: IntArray, d: Int): Int
 }
